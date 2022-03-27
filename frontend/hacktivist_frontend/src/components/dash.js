@@ -20,7 +20,33 @@ export default class Dashboard extends React.Component{
 
 
 	} 
-	
+	render(){
+
+		return(
+		<Router>	
+			<div>
+
+			
+	       	<nav  id="navuser" className="navbar navbar-expand-lg navbar-light bg-light">
+	          
+	       </nav>
+				<button id="lolout" className="btn btn-primary" onClick={this.onClick}>LOGOUT</button>
+        
+        
+
+	</div>
+
+
+
+        {/*
+        <Route path="/dashboard/dispatched" component={() => <Dashboard />}/>
+        <Route path="/dashboard/search" component={() => <Dashboard />}/>
+        <Route path="/dashboard/track" component={() => <Dashboard />}/>
+        <Route path="/dashboard/rate" component={() => <Dashboard />}/>*/}
+
+		</Router>
+		);
+	}
 	
 }
 
