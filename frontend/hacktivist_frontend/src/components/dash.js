@@ -40,8 +40,12 @@ export default class Dashboard extends React.Component{
     }
 	
 
-	onSubmit_l(e){
-		
+	onSubmit_l= (e) =>{
+	e.preventDefault();	
+	// console.log(this.state.leetcode_username)
+	     
+
+
 	}
 	render(){
 
