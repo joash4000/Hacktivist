@@ -43,9 +43,14 @@ export default class Dashboard extends React.Component{
 	onSubmit_l= (e) =>{
 	e.preventDefault();	
 	// console.log(this.state.leetcode_username)
-	     
-
-
+    const newUser = {
+		leetcode_user: this.state.leetcode_username,
+	}
+	axios.post('http://localhost:4000/addleetcodeuser', newUser)
+	  .then(res=>{
+		document.getElementById("AfterSubmit").innerHTML = "email already exist" ;
+	  })
+       
 	}
 	render(){
 

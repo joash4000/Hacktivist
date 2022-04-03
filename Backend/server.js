@@ -12,6 +12,7 @@ var upload = multer({dest:'uploads/'})
 var session = require("express-session");
 
 let User = require('./models/userShcema');
+let List = require('./models/list')
 {/*let Vendor = require('./models/vendor')
 let List = require('./models/list')
 let Vrating = require('./models/vrating')
@@ -71,7 +72,7 @@ userRoutes.post('/checkuser',function(req,res){
         fu={...fu,success:true}
         return res.status(200).json(fu);
     })
-
+    
     // UList.findOne({uid:nex},function(err,ulis){
     // 	if(err){
     //         console.log(err);
@@ -81,6 +82,17 @@ userRoutes.post('/checkuser',function(req,res){
     //     	ulo.save()
     //     }
     // })
+});
+userRoutes.post('/form',function(req,res){
+	let list = new List(req.body);
+     
+    list.save()
+        .then(user=> {
+            res.status(200).json({'success': true,listid:list._id});
+        })
+        .catch(err => {
+            res.status(400).send('Error');
+        });
 });
 app.use('/', userRoutes);
 app.listen(PORT, function() {
