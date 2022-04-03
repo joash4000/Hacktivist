@@ -3,13 +3,6 @@ import axios from 'axios'
 export default class Add extends React.Component{
 	constructor(props){
 		super(props)
-		this.onChangeleetcode= this.onChangeleetcode.bind(this);
-        this.onChangecodeforces = this.onChangecodeforces.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-         this.onChangegithub=this.onChangegithub.bind(this);
-        // this.onChangePrice=this.onChangePrice.bind(this);
-        // this.onChangeImage=this.onChangeImage.bind(this);
-
         this.state={
             vname:this.props.name,
         	vid:this.props.id,
@@ -17,6 +10,14 @@ export default class Add extends React.Component{
         	codeforces_username:"",
         	github_username:""
         }
+		this.onChangeleetcode= this.onChangeleetcode.bind(this);
+        this.onChangecodeforces = this.onChangecodeforces.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+         this.onChangegithub=this.onChangegithub.bind(this);
+        // this.onChangePrice=this.onChangePrice.bind(this);
+        // this.onChangeImage=this.onChangeImage.bind(this);
+
+        
 	}
  	onChangeleetcode(event) {
         this.setState({leetcode_username: event.target.value });

@@ -83,6 +83,22 @@ userRoutes.post('/checkuser',function(req,res){
     //     }
     // })
 });
+userRoutes.post('/display',function(req,res){
+    var vid=req.body.id; 
+    List.find({vid:vid},function(err,lists){ 
+      	if(err){
+            console.log(err);
+            return res.status(500).send({success:false,message:"server error"});
+        }
+        if(!lists){
+        	console.log("ldsl")
+            res.send({success:false,message:"NOT FOUND"});
+            // res.redirect('/')
+            return res
+        }
+        return res.status(200).json(lists);
+    })
+});
 userRoutes.post('/form',function(req,res){
 	let list = new List(req.body);
      
@@ -94,6 +110,7 @@ userRoutes.post('/form',function(req,res){
             res.status(400).send('Error');
         });
 });
+
 app.use('/', userRoutes);
 app.listen(PORT, function() {
     console.log("Server is running on port: " + PORT);

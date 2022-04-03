@@ -2,7 +2,7 @@ import React from "react"
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Add from './add'
-
+import Display from './display'
 export default class Dashboard extends React.Component{
 	constructor(){
 		super()
@@ -84,7 +84,7 @@ export default class Dashboard extends React.Component{
 	       </nav>
 				<button id="lolout" className="btn btn-primary" onClick={this.onClick}>LOGOUT</button>
                 <Route path="/dashboard/form" component={() => <Add id={this.state._id} name={this.state.username}/>}/>
-        
+                <Route path="/dashboard/display" component={() => <Display id={this.state._id} />}/>
       {/* <Route path="/dashboard/add" component={() => <Add id={this.state._id} name={this.state.username}/>}/>
         <Route path="/dashboard/list" component={() => <List id={this.state._id} type="all"/>}/>
         <Route path="/dashboard/todispatch" component={() => <List id={this.state._id} type="todis"/>}/>
