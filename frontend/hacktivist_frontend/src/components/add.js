@@ -64,7 +64,7 @@ export default class Add extends React.Component{
                    }
                  });
 
-        console.log(lid)
+        //console.log(lid)
 
         // if(flag==1){
 	    //     const formData= new FormData();

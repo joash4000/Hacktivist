@@ -85,7 +85,7 @@ userRoutes.post('/checkuser',function(req,res){
 });
 userRoutes.post('/display',function(req,res){
     var vid=req.body.id; 
-    List.find({vid:vid},function(err,lists){ 
+    List.findOne({vid:vid},function(err,lists){ 
       	if(err){
             console.log(err);
             return res.status(500).send({success:false,message:"server error"});
