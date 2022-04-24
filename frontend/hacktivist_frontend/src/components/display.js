@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react';
 import axios from 'axios'
-
-export default class Display extends React.Component{
+import {Leet,Gith,Codef} from "./leet";
+import Leetcode from "./leetcode";
+import Github from './github';
+export default class Display extends Component{
 	constructor(props){
 		super(props) 
 		this.state={}
@@ -26,9 +28,12 @@ export default class Display extends React.Component{
 
            //console.log(this.state)
     }
+    
  
 	render(){
 		var st=this.state
+        //var user = st;
+        console.log(st)
         console.log(st.codeforces_username)
         console.log(st.leetcode_username)
         console.log(st.github_username)
@@ -48,8 +53,21 @@ export default class Display extends React.Component{
 		return(
 
   		<div>
-         { st.codeforces_username} 
+          
+        <Leet us={st.leetcode_username} />
+         <Gith us={st.github_username}/>
+        <Codef us={st.codeforces_username}/>
+          {/*  <Leetcode lu={st.leetcode_username}/>
+           <Github gu={st.github_username} />*/}
+
+
         </div>
 		);
-   }
+
+       
+
+
+  
+}
+
 }
