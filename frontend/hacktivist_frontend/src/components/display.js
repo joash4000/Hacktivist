@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import axios from 'axios'
+import React  from 'react';
+import axios from 'axios';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {Leet,Gith,Codef} from "./leet";
 import Leetcode from "./leetcode";
 import Github from './github';
-export default class Display extends Component{
+export default class Display extends React.Component{
 	constructor(props){
 		super(props) 
 		this.state={}
@@ -51,17 +52,19 @@ export default class Display extends Component{
         //  console.log(cf)
         //  console.log(gh);
 		return(
-
+            <Router>
   		<div>
-          
+          {/* 
         <Leet us={st.leetcode_username} />
          <Gith us={st.github_username}/>
         <Codef us={st.codeforces_username}/>
-          {/*  <Leetcode lu={st.leetcode_username}/>
+           <Leetcode lu={st.leetcode_username}/>
            <Github gu={st.github_username} />*/}
-
-
+           
+           <Route path="/dashboard/display" component={() => <Leetcode lu={st.leetcode_username} />}/>
+           <Route path="/dashboard/display" component={() => <Github gu={st.github_username} />}/>
         </div>
+        </Router>
 		);
 
        

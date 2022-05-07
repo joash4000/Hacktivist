@@ -36,8 +36,19 @@ render() {
 
     return (
     <div className = "App">
-        {/*<h1> Fetch data from an api in react </h1> */}
-        {items.easySolved}
+        {/*<h1> Fetch data from an api in react </h1> 
+        {items.easySolved}*/}
+        <header className="App-header">
+          <h2>Leetcode User Data</h2>
+        </header>
+        <div className="user-container">
+          <h5 className="info-item">Ranking : {items.ranking}</h5>
+          <h5 className="info-item">Acceptance-Rate : {items.acceptanceRate}</h5>
+          <h5 className="info-item">Easy Solved : {items.easySolved}</h5>
+          <h5 className="info-item">Medium Solved : {items.mediumSolved}</h5>
+          <h5 className="info-item">Hard Solved : {items.hardSolved}</h5>
+          <h5 className="info-item">Contribution Points : {items.contributionPoints}</h5>
+        </div>
          {
         //    Object.keys(items).map((key,i) =>(
         //        <p key={i}>

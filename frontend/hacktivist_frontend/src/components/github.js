@@ -34,8 +34,19 @@ render() {
 
     return (
     <div className = "App">
-        {/*<h1> Fetch data from an api in react </h1> */}
-        {items.name}
+        {/*<h1> Fetch data from an api in react </h1> 
+        {items.name}*/}
+        <header className="App-header">
+        <h2>GitHub User Data</h2>
+      </header>
+      <div className="user-container">
+      <h5 className="info-item">Name : {items.name}</h5> 
+      <h5 className="info-item">Blog : {items.blog}</h5>
+      <h5 className="info-item">company : {items.company}</h5>
+      <h5 className="info-item">Public-Repos : {items.public_repos}</h5>
+      <h5 className="info-item">Followers : {items.followers}</h5>
+      <h5 className="info-item">Following : {items.following}</h5>
+      </div>
          {
         //    Object.keys(items).map((key,i) =>(
         //        <p key={i}>
